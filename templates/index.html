@@ -1,0 +1,23 @@
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js" integrity="sha512-tE1z+95+lMCGwy+9PnKgUSIeHhvioC9lMlI7rLWU0Ps3XTdjRygLcy4mLuL0JAoK4TLdQEyP0yOl/9dMOqpH/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='index.js') }}"></script>
+<div id="container">
+    <p>Choose a library to upload to:</p>
+    {% for library in libraries: %}
+        <p class="library-option" onclick="optionSelected(this)" aria-valuetext={{library['key']}}>{{library["title"]}}</p>
+    {%endfor%}
+
+
+    <div id="fileSelectorContainer">
+        <label for="fileSelector">Choose File</label>
+        <input multiple onchange="loadFilesSocket()" id="fileSelector" hidden="true" type="file" accept=".lz,.xz,.gz,.zip,.7z,.tar.gz,.tar.xz,.tar.lz"/>
+        <!-- <p id="fileNameViewer">Selected File: None</p> -->
+    </div>
+
+    <button onclick="submitSocket()" id="submitButton" value="Upload">Upload</button>
+
+    <div id="progress-bar-container">
+        
+    </div>
+</div>

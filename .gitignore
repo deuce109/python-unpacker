@@ -1,0 +1,12 @@
+Include
+Lib
+Scripts
+pyvenv.cfg
+
+handlertest.py
+*.json
+
+__pycache__
+*data*
+
+*.log

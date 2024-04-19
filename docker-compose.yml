@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  uploader:
+    image: uploader
+    build:
+      context: ./
+    volumes:
+    - "D:/Docker Data/plex/data:/data"
+    container_name: "uploader"
+    ports:
+    - 5000:5000
+    environment:
+    - X_PLEX_TOKEN=${X_PLEX_TOKEN}
+    labels:
+      CONNECTION_PORT: "5000"
+      SERVER_NAME: Plex Uploader
+      SERVER_TYPE: "Uploader"
+    networks:
+    - plex
+
+networks:
+  plex:
+    external: true

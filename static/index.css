@@ -1,0 +1,122 @@
+html {
+    --black: #202020;
+    --white: #DAE1E7;
+    --blue: rgb(59, 153, 165);
+    --default-border: var(--blue) solid 1px;
+
+    background: var(--black);
+    color: var(--white);
+    font-family: Verdana, Tahoma, "Century Gothic", Trebuchet, "Trebuchet MS", Calibri, "Open Sans", Helvetica, Arial;
+    font-size: 16px;
+    
+}
+
+a {
+    color: var(--white)
+}
+
+li {
+    margin: 5px;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+#container {
+    width: 66vh;
+    margin-left: 17vh;
+    margin-top: 5vh;
+}
+
+#submitButton, #submitButton:disabled:hover, label[for="fileSelector"] {
+    background: inherit;
+    box-shadow: none;
+    border: var(--default-border);
+    border-radius: 5px;
+    padding: 15px;
+    color: inherit;
+    cursor: pointer;
+    width: fit-content;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+#submitButton:disabled {
+    cursor: default !important;
+    filter: grayscale(75%)
+}
+
+#submitButton:hover, label[for="fileSelector"]:hover {
+    background: var(--blue);
+    color: var(--black);
+    -moz-box-sizing: border-box; /* partially supported */
+    box-sizing: border-box; /* here is what I added */
+}
+
+.library-option {
+    display: flex;
+    width: fit-content;
+    background: var(--black);
+    color: inherit;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.library-option:hover {
+    text-decoration: underline;
+}
+
+.library-option::before {
+    content: '>'
+}
+
+
+.selected {
+    background:  var(--blue);
+    color: var(--black);
+}
+
+input::after {
+    content: "";
+}
+
+#library-options {
+    margin-bottom: 30px;
+}
+
+#fileSelectorContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+#fileNameViewer {
+    margin-top: 15px;
+}
+
+#progress-bar-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-bar-wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+progress {
+    margin-top: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.progress-percentage-text {
+    margin-left: 1rem;
+}
